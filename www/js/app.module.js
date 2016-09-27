@@ -6,7 +6,9 @@ angular.module('store',
 		'ionic',
 		'store.routes',
 		'store.home.controller',
-		'store.products.service'
+		'store.products.service',
+		'store.change.directive',
+		'store.productDetail.directive'
 	]).run(run);
 
 function run($ionicPlatform) {

@@ -1,23 +1,25 @@
 'use strict';
 
 angular.module('store.home.controller', [])
-		.controller('HomeController', HomeController);
+	.controller('HomeController', HomeController);
 
-		HomeController.$inject = ['$log', 'ProductsService'];
+HomeController.$inject = ['$log', 'ProductsService'];
+function HomeController($log, ProductsService) {
+	$log.log('HomeController loaded.');
 
-    function HomeController ($log, ProductsService) {
-				$log.log('HomeController loaded.');
+	  var vm = this;
+	  vm.items = [];
 
-        var vm = this;
-        vm.products = [];
+  	activateProducts();
 
-        activateProducts();
-
-        function activateProducts() {
-            return ProductsService.getProducts()
-              .then(function (data){
-                  vm.products = data;
-                  return vm.products;
-              });
-        }
-    }
+  	function activateProducts() {
+    	return ProductsService.getProducts()
+  		.then(function(data) {
+			var items = data.products;
+			$log.log(items);
+			while(items.length > 3) {
+    			vm.items.push(items.splice(0, 3));
+			}
+      	});
+	}
+}

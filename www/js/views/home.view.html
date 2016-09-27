@@ -1,4 +1,21 @@
 <div class="content has-header padding">
-      <h1>Products</h1>
-			<pre>{{ vm.products }}</pre>
+  <h1>Products</h1>
+  <div class="row" ng-repeat="products in vm.items">
+    <div class="col col-33" ng-repeat="product in products" st-change>
+        <img class="full-image" ng-src="http://www.netshoes.com.br/Produtos/28/123-0628-028/123-0628-028_detalhe1.jpg">
+        <div class="text-center product-description">
+            <p>{{product.title}}</p>
+            <hr class="divisor">
+            <div>
+                {{product.currencyFormat}} {{product.price}}
+            </div>
+        </div>
+    </div>
+  </div>
 </div>
+
+<style>
+hr.divisor {
+    width: 10%;
+}
+</style>
