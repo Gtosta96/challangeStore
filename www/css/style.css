@@ -1,1 +1,27 @@
-/* Empty. Add your own CSS if you like */
+/* HOME PAGE */
+hr.divisor {
+    width: 10%;
+    border-style: solid;
+    color: #ffc107;
+}
+
+div.product-description {
+
+}
+
+div.product-details {
+    background-color: #000;
+    color: #fff;
+}
+
+div.product-price {
+    font-size: 11px;
+}
+
+div.product-price strong {
+    font-size: 22px;
+}
+
+.block {
+    display: block;
+}

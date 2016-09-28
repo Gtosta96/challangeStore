@@ -1,0 +1,25 @@
+<div class="row" ng-repeat="itemBlock in items">
+  <div class="col text-center" ng-repeat="product in itemBlock">
+	  <img class="full-image" ng-src="http://www.netshoes.com.br/Produtos/28/123-0628-028/123-0628-028_detalhe1.jpg" ng-click="toggleDetails(product)">
+	  <div ng-if="!product.showDetails" class="product product-description">
+		  <strong class="product-title">{{ product.title }}</strong>
+		  <hr class="divisor">
+		  <div class="product-price">
+			  <strong>{{ product.price | currency: product.currencyFormat : 2 }}</strong>
+		  </div>
+	  </div>
+	  <div ng-if="product.showDetails" class="product product-details">
+		  <span>
+			  <strong class="block product-title">{{ product.title }}</strong>
+			  {{ product.style }}
+		  </span>
+		  <div class="product-price">
+		  	<strong>{{ product.price | currency: product.currencyFormat : 2 }}</strong>
+		  	(3x {{ product.price | stDivide: 3 | currency: product.currencyFormat : 2 }})
+		  </div>
+		  <button class="button button-full button-energized" ng-click="setCallback(product)">
+  	  		Adicionar ao carrinho
+		</button>
+	  </div>
+  </div>
+</div>
