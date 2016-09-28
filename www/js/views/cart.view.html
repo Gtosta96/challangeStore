@@ -1,3 +1,4 @@
+<ion-view cache-view="false">
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-energized" align-title="center">
@@ -30,7 +31,7 @@
       </div>
       <div class="row cart-buttons">
           <div class="col col-50">
-                <button type="button" class="button button-outline button-assertive">Limpar</button>
+                <button type="button" class="button button-outline button-assertive" ng-click="vm.clearCart()">Limpar</button>
           </div>
           <div class="col col-50">
               <button type="button" class="button button-outline button-balanced">Comprar</button>
@@ -39,3 +40,4 @@
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
+</ion-view>

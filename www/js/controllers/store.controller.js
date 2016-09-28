@@ -18,7 +18,6 @@ function StoreController($log, ProductsService, CartService) {
     	return ProductsService.getProducts()
   		.then(function(data) {
 			vm.products = data.products;
-			$log.log(vm.products);
       	});
 	};
 
