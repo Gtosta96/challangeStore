@@ -25,16 +25,19 @@
 		  </div>
         </div>
       </div>
-      <div class="cart cart-total">
+      <div ng-if="vm.total == 0" class="cart cart-total">
+          <strong class="cart-empty">Não há produtos no carrinho</strong>
+      </div>
+      <div ng-if="vm.total > 0" class="cart cart-total">
           <strong class="block">{{ vm.total | currency: 'R$ ' : 2 }}</strong>
           <span class="opacity">(OU EM ATÉ 12x {{ vm.total | stDivide: 12 | currency: 'R$' : 2 }})</span>
-      </div>
-      <div class="row cart-buttons">
-          <div class="col col-50">
-                <button type="button" class="button button-outline button-assertive" ng-click="vm.clearCart()">Limpar</button>
-          </div>
-          <div class="col col-50">
-              <button type="button" class="button button-outline button-balanced">Comprar</button>
+          <div class="row cart-buttons">
+              <div class="col col-50">
+                    <button type="button" class="button button-outline button-assertive" ng-click="vm.clearCart()">Limpar</button>
+              </div>
+              <div class="col col-50">
+                  <button type="button" class="button button-outline button-balanced">Comprar</button>
+              </div>
           </div>
       </div>
     </ion-content>

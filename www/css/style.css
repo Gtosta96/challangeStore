@@ -9,6 +9,15 @@ hr.divisor {
     color: #ffc107;
 }
 
+.loading svg {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 div.product-details {
     background-color: #000;
     color: #fff;

@@ -8,14 +8,14 @@ function StoreController($log, ProductsService, CartService) {
 	$log.log('StoreController loaded.');
 
 	  var vm = this;
-	  vm.products = [];
+	  vm.products;
 	  vm.cart = [];
 	  vm.addToCartCallback = addToCartCallback;
 
-  	getProducts();
+	  getProducts();
 
   	function getProducts() {
-    	return ProductsService.getProducts()
+		ProductsService.getProducts()
   		.then(function(data) {
 			vm.products = data.products;
       	});

@@ -1,5 +1,6 @@
 <ion-view view-title="Loja">
   <ion-content>
-<st-change source="vm.products" columns="3" callback="vm.addToCartCallback(product)"></st-change>
+    <ion-spinner class="loading" icon="spiral" ng-if="!vm.products"></ion-spinner>
+    <st-change ng-if="vm.products" source="vm.products" columns="3" callback="vm.addToCartCallback(product)"></st-change>
   </ion-content>
 </ion-view>
