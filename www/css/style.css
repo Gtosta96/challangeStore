@@ -58,6 +58,7 @@ div.product-price strong {
 
 .cart-black .cart-total {
     text-align: right;
+    padding: 5px;
 }
 .cart-black .cart-total strong {
     font-size: 25px;
