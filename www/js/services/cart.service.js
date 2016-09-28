@@ -7,6 +7,7 @@ function cartService($log, StorageService) {
 	return {
 		add: add,
 		remove: remove,
+		getCart: getCart,
 		clear: clear
 	};
 
@@ -18,11 +19,16 @@ function cartService($log, StorageService) {
 		if(productInCart) {
 			productInCart.qntCart++;
 		} else {
+			product.qntCart = 1;
 			cart[product.id] = product;
 		}
 
 		StorageService.set(CART_KEY, cart);
 	};
+
+	function getCart() {
+		return StorageService.get(CART_KEY);
+	}
 
 	function remove(key) {
  	   var cart = StorageService.get(CART_KEY);

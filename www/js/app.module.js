@@ -5,7 +5,9 @@ angular.module('store',
 	[
 		'ionic',
 		'store.routes',
-		'store.home.controller',
+
+		'store.cart.controller',
+		'store.store.controller',
 
 		'store.products.service',
 		'store.cart.service',
@@ -14,7 +16,8 @@ angular.module('store',
 
 		'store.change.directive',
 
-		'store.divide.filter'
+		'store.divide.filter',
+		'store.multiply.filter'
 	]).run(run);
 
 function run($ionicPlatform) {

@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('store.home.controller', [])
-	.controller('HomeController', HomeController);
+angular.module('store.store.controller', [])
+	.controller('StoreController', StoreController);
 
-HomeController.$inject = ['$log', 'ProductsService', 'CartService'];
-function HomeController($log, ProductsService, CartService) {
-	$log.log('HomeController loaded.');
+StoreController.$inject = ['$log', 'ProductsService', 'CartService'];
+function StoreController($log, ProductsService, CartService) {
+	$log.log('StoreController loaded.');
 
 	  var vm = this;
 	  vm.products = [];
@@ -23,7 +23,6 @@ function HomeController($log, ProductsService, CartService) {
 	};
 
 	function addToCartCallback(product) {
-		//CartService.add(product);
-		CartService.remove(product.id);
+		CartService.add(product);
 	};
 };

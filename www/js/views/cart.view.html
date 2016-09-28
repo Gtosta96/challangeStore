@@ -1,0 +1,41 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-energized" align-title="center">
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="contentMenu" animation="slide-right-left"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right" class="cart cart-black" width="400">
+    <header class="bar bar-header">
+      <h1 class="title title-white">Carrinho</h1>
+    </header>
+    <ion-content class="has-header">
+      <div class="list" ng-repeat="product in vm.products">
+        <div class="item item-thumbnail-left content-white">
+          <img ng-src="http://www.netshoes.com.br/Produtos/28/123-0628-028/123-0628-028_detalhe1.jpg">
+          <h2 class="product-title">{{ product.title }}</h2>
+          <p class="product-style">{{ product.style }}</p>
+          <p><span>Quantidade: </span>{{ product.qntCart }}</p>
+          <div class="product-price">
+		  	<strong>{{ product.price | stMultiply: product.qntCart | currency: product.currencyFormat : 2 }}</strong>
+		  </div>
+        </div>
+      </div>
+      <div class="cart cart-total">
+          <strong class="block">{{ vm.total | currency: 'R$ ' : 2 }}</strong>
+          <span class="opacity">(OU EM ATÉ 12x {{ vm.total | stDivide: 12 | currency: 'R$' : 2 }})</span>
+      </div>
+      <div class="row cart-buttons">
+          <div class="col col-50">
+                <button type="button" class="button button-outline button-assertive">Limpar</button>
+          </div>
+          <div class="col col-50">
+              <button type="button" class="button button-outline button-balanced">Comprar</button>
+          </div>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
