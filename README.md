@@ -21,8 +21,8 @@ ionic serve
 Testado no google chrome e Moto G4 Plus.
 Habilitar emulação de dispositivo no chrome. (inspecionar(F12) > toggle device toolbar(ctrl + shift + M)).
 
-![Alt text](https://raw.github.com/Gtosta96/challangeStore/screenshots/store.jpg "Loja")
-![Alt text](https://raw.github.com/Gtosta96/challangeStore/screenshots/cart.jpg "Loja")
+![Alt text](https://raw.githubusercontent.com/Gtosta96/challangeStore/master/screenshots/cart.jpg "Loja")
+![Alt text](https://raw.githubusercontent.com/Gtosta96/challangeStore/master/screenshots/store.jpg "Carrinho")
 
 Styleguide da arquitetura (JohnPapa):
 [https://github.com/johnpapa/angular-styleguide/tree/master/a1](Link URL)
